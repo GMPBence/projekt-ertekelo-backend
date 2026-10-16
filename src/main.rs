@@ -699,7 +699,7 @@ async fn main() -> Result<()> {
         email_service,
     };
     let origins = env::var("CORS_ORIGINS")
-        .unwrap_or_else(|_| "http://localhost:5173,http://127.0.0.1:5173".to_owned())
+        .unwrap_or_else(|_| "*".to_owned())
         .split(',')
         .map(|origin| {
             origin
